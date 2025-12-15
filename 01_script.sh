@@ -18,3 +18,10 @@ name="Harry"
 
 echo "His name is $name"
 
+#Variable to store the output of commands
+
+HOST=$(hostname)
+
+echo "This machine name is $HOST"
+echo "Name of this machine is $(hostname)"
+
