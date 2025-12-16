@@ -25,3 +25,10 @@ HOST=$(hostname)
 echo "This machine name is $HOST"
 echo "Name of this machine is $(hostname)"
 
+#Constant variables start with "readonly"
+
+readonly school="SSM Balghar"
+#school="Vidya Mandir"
+
+echo "My school name is $school"
+
