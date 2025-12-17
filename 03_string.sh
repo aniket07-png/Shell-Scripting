@@ -6,8 +6,8 @@ echo "Length of the string is ${#myVar}"
 
 #How to convert the string in Upper case and Lower case
 
-echo "Upper case is ----- ${myVar^^}"
-echo "Lower case is ----- ${myVar,,}"
+echo "Upper case ----- ${myVar^^}"
+echo "Lower case ----- ${myVar,,}"
 
 #How to replace a word from string
 
