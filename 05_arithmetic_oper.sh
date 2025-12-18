@@ -16,10 +16,8 @@ echo "The multiplication of those two no. is $mul"
 #Second method
 
 echo "The substraction of those two no. is $(($x-$y))"
-$echo "The division of those two no. is $(($x/$y))"
+#echo "The division of those two no. is $(($x/$y))"
 
 #The above division does not work properly it only show 0
 
 echo "The division of those two no. is $(echo "scale=2;$x/$y"|bc)"
-
-
