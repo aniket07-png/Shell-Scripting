@@ -19,8 +19,8 @@ welcome () {
 
 welcome
 welcome
-WelcomeNote
-WelcomeNote
+WelcomeNote "$1" "$2"
+WelcomeNote "$1" "$2"
 
 #Calling function with Arguments
 
