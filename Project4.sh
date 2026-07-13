@@ -1,24 +1,27 @@
 #!/bin/bash
+set -e
 
-#This script takes the package name from user and install it
-
-read -p "Enter the package name:- " Package
-
-echo "Checking if the package is already installed"
-
-if dpkg -s $Package >/dev/null 2>&1
+if [[ $EUID -ne 0 ]];
 then
-	echo "$Package already installed"
-	exit 1
-else
-	echo "Updating system and Installing $Package"
+    echo "Please run this script as the root user."
+    exit 1
 fi
 
-sudo apt-get update
-sudo apt install $Package -y
+read -p "Enter the package name: " package
 
-read -p "Enter the service name:- " Service
+echo "Checking if the package is already installed..."
 
-sudo systemctl start $Service
-systemctl status $Service
+if dpkg -s "$package" >/dev/null 2>&1; then
+    echo "$package is already installed."
+    exit 0
+else
+    echo "Updating package list and installing $package..."
+fi
 
+apt-get update
+apt-get install -y "$package"
+
+read -p "Enter the service name: " service
+
+systemctl start "$service"
+systemctl status "$service"
